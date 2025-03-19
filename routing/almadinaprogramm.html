@@ -3,14 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mitgliederbereich - AlmadinaKulturverein</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font Awesome for icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+
+    <!-- Custom Styling -->
+    <style>
+        body {
+            background: url('../assets/img/almadina.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            color: #2c3e50;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .member-area {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #d4af37;
+            border-radius: 2px;
+        }
+
+        .welcome-message {
+            background: linear-gradient(45deg, #f9f9f9, #ffffff);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .member-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .option-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #d4af37;
+        }
+
+        .option-card i {
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .option-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .option-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        #abmelden {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            padding: 12px 25px;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #dc3545, #e4606d);
+            border: none;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        #abmelden:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background: linear-gradient(45deg, #e4606d, #dc3545);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .member-area {
+                margin: 20px;
+                padding: 20px;
+            }
+            .member-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="member-area">
+        <h1>Programme der AlmadinaKulturverein</h1>
+        
+        <div class="welcome-message">
+            <p>Willkommen im Mitgliederbereich! Hier finden Sie exklusive Inhalte und Funktionen für unsere Mitglieder.</p>
+        </div>
 
-    <h1>Programme der AlmadiaKulturverein</h1>
-    <button id="abmelden">Abmelden</button>
+        <div class="member-options">
+            <div class="option-card">
+                <i class="fa fa-calendar"></i>
+                <h3>Veranstaltungen</h3>
+                <p>Sehen Sie kommende Events und melden Sie sich an.</p>
+            </div>
+            <div class="option-card">
+                <i class="fa fa-book"></i>
+                <h3>Unterricht</h3>
+                <p>Zugriff auf Lernmaterialien und Kurspläne.</p>
+            </div>
+            <div class="option-card">
+                <i class="fa fa-heart"></i>
+                <h3>Spenden</h3>
+                <p>Unterstützen Sie unsere Projekte direkt.</p>
+            </div>
+            <div class="option-card">
+                <i class="fa fa-user"></i>
+                <h3>Profil</h3>
+                <p>Verwalten Sie Ihre Mitgliedsdaten.</p>
+            </div>
+        </div>
 
+        <button id="abmelden">Abmelden</button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Your custom JS -->
     <script type="module" src="../assets/js/anmeldung.js"></script>
-    
 </body>
 </html>
